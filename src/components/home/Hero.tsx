@@ -1,7 +1,9 @@
 import React from "react";
-import { ButtonDemo } from "../ButtonDemo";
+import { Button } from "../ui/button";
 
 const Hero = () => {
+  const gambar = ["/images/1.png", "/images/2.png", "/images/3.png"];
+
   return (
     <div className="max-w-7xl mx-auto px-4">
       <div className="flex flex-col lg:flex-row items-center justify-center">
@@ -28,33 +30,27 @@ const Hero = () => {
               </p>
             </div>
 
-            <div>
-              <ButtonDemo></ButtonDemo>
-            </div>
+            <Button className="w-[200px] h-16 text-lg" variant="default">
+              Gabung Sekarang
+            </Button>
 
             <div className="flex flex-col md:flex-row items-center my-8 relative">
-              <div className="flex items-center relative mb-2">
-                <div className="border-[3px] border-[#972421] rounded-full overflow-hidden bg-gray-200">
-                  <img
-                    src="/images/1.png"
-                    className="w-10 h-10 object-scale-down"
-                  />
+              {gambar.map((foto, urutan) => (
+                <div
+                  key={urutan}
+                  className={`flex items-center relative mb-2 ${
+                    urutan !== 0 ? `right-${urutan * 3}` : ""
+                  }`}
+                >
+                  <div className="border-[3px] border-[#972421] rounded-full overflow-hidden bg-gray-200">
+                    <img
+                      src={foto}
+                      className="w-10 h-10 object-scale-down"
+                      alt={`Foto ${urutan + 1}`}
+                    />
+                  </div>
                 </div>
-
-                <div className="border-[3px] border-[#972421] rounded-full overflow-hidden relative right-3 bg-gray-200">
-                  <img
-                    src="/images/2.png"
-                    className="w-10 h-10 object-scale-down"
-                  />
-                </div>
-
-                <div className="border-[3px] border-[#972421] rounded-full overflow-hidden relative right-6 bg-gray-200">
-                  <img
-                    src="/images/3.png"
-                    className="w-10 h-10 object-scale-down"
-                  />
-                </div>
-              </div>
+              ))}
 
               <div className="flex relative right-4">
                 <h1 className=" text-4xl font-bold">10,000++</h1>
@@ -68,7 +64,11 @@ const Hero = () => {
         </div>
 
         <div className="w-full md:w-[670px] md:h-[480px]">
-          <img src="/images/foto1.jpeg" className=" object-fill rounded-md" />
+          <img
+            src="/images/foto1.jpeg"
+            className=" object-fill rounded-md"
+            alt="Foto 1"
+          />
         </div>
       </div>
     </div>
