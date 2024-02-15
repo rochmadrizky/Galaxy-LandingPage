@@ -2,7 +2,11 @@ import React from "react";
 import { Button } from "../ui/button";
 
 const Hero = () => {
-  const gambar = ["/images/1.png", "/images/2.png", "/images/3.png"];
+  const gambar = [
+    { foto: "/images/1.png", gaya: { right: 0 } },
+    { foto: "/images/2.png", gaya: { right: "13px" } },
+    { foto: "/images/3.png", gaya: { right: "26px" } },
+  ];
 
   return (
     <div className="max-w-7xl mx-auto px-4">
@@ -35,22 +39,20 @@ const Hero = () => {
             </Button>
 
             <div className="flex flex-col md:flex-row items-center my-8 relative">
-              {gambar.map((foto, urutan) => (
-                <div
-                  key={urutan}
-                  className={`flex items-center relative mb-2 ${
-                    urutan !== 0 ? `right-${urutan * 3}` : ""
-                  }`}
-                >
-                  <div className="border-[3px] border-[#972421] rounded-full overflow-hidden bg-gray-200">
+              <div className="flex items-center relative mb-2">
+                {gambar.map((orang, urutan) => (
+                  <div
+                    key={urutan}
+                    className={`border-[3px] border-[#972421] rounded-full overflow-hidden bg-gray-200`}
+                    style={{ position: "relative", ...orang.gaya }}
+                  >
                     <img
-                      src={foto}
+                      src={orang.foto}
                       className="w-10 h-10 object-scale-down"
-                      alt={`Foto ${urutan + 1}`}
                     />
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
 
               <div className="flex relative right-4">
                 <h1 className=" text-4xl font-bold">10,000++</h1>
@@ -64,11 +66,7 @@ const Hero = () => {
         </div>
 
         <div className="w-full md:w-[670px] md:h-[480px]">
-          <img
-            src="/images/foto1.jpeg"
-            className=" object-fill rounded-md"
-            alt="Foto 1"
-          />
+          <img src="/images/foto1.jpeg" className=" object-fill rounded-md" />
         </div>
       </div>
     </div>

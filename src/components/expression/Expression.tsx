@@ -53,7 +53,7 @@ const Expression = () => {
                 className="border rounded-xl flex flex-col justify-between p-4"
               >
                 <div className="p-4">
-                  <div className="p-2">
+                  <div className="p-2 flex flex-col items-center justify-center">
                     <div className="text-center font-bold">
                       <h1 className="text-[15px]">{ucapan.nama}</h1>
                       <h1 className="text-[12px] text-[#980000]">
@@ -62,7 +62,9 @@ const Expression = () => {
                     </div>
 
                     <div className="w-[209px] h-[98px] pt-4">
-                      <p className="text-[12px]">{ucapan.deskripsi}</p>
+                      <p className="text-[12px] text-center md:text-left">
+                        {ucapan.deskripsi}
+                      </p>
                     </div>
                   </div>
                 </div>
