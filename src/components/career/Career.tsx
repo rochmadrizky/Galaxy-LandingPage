@@ -1,4 +1,5 @@
 import { IconDots, IconOvalVerticalFilled } from "@tabler/icons-react";
+import Image from "next/image";
 import React from "react";
 
 const Career = () => {
@@ -18,8 +19,8 @@ const Career = () => {
 
         <div className="pt-2 text-center">
           <p>
-            We're dedicated group of Sed ut perspiciatis unde omnis iste natus
-            error sit
+            We&apos;re dedicated group of Sed ut perspiciatis unde omnis iste
+            natus error sit
           </p>
 
           <p>voluptatem accusantium doloremque laudantium</p>
@@ -28,7 +29,7 @@ const Career = () => {
         <div className="pt-16 pb-24">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {gambar.map((foto, urutan) => (
-              <img
+              <Image
                 key={urutan}
                 src={foto}
                 className="w-[280px] h[280px] rounded-2xl"

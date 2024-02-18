@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const About = () => {
@@ -38,9 +39,10 @@ const About = () => {
           <h1 className="text-5xl font-bold">harus di GALAXY?</h1>
         </div>
 
-        <img
+        <Image
           src="/images/foto2.jpeg"
           className="w-[429px] h-[608px] object-cover rounded-tr-full"
+          alt={"about"}
         />
 
         <div className="p-6">
@@ -52,7 +54,11 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             {terkait.map((penjelasan, urutan) => (
               <div key={urutan} className="max-w-xs mb-6">
-                <img src={penjelasan.icon} className="w-[102px] h-20" />
+                <Image
+                  src={penjelasan.icon}
+                  className="w-[102px] h-20"
+                  alt="penjelasan"
+                />
                 <div className="mt-6 mb-4">
                   <h1 className="text-2xl font-bold">{penjelasan.judul}</h1>
                   {penjelasan.lanjutan && (

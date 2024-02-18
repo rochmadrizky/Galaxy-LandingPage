@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "../ui/button";
+import Image from "next/image";
 
 const Hero = () => {
   const gambar = [
@@ -16,7 +17,7 @@ const Hero = () => {
             <div className="w-full md:w-[500px] mb-8">
               <div className="text-3xl md:text-5xl font-bold">
                 <h1>Saatnya Jadi</h1>
-                <h1 className="py-2 text-[#972421]">'Rich People'</h1>
+                <h1 className="py-2 text-[#972421]">&apos;Rich People&apos;</h1>
               </div>
 
               <div className="text-3xl md:text-5xl font-bold">
@@ -46,9 +47,10 @@ const Hero = () => {
                     className={`border-[3px] border-[#972421] rounded-full overflow-hidden bg-gray-200`}
                     style={{ position: "relative", ...orang.gaya }}
                   >
-                    <img
+                    <Image
                       src={orang.foto}
                       className="w-10 h-10 object-scale-down"
+                      alt="Hero"
                     />
                   </div>
                 ))}
@@ -66,7 +68,11 @@ const Hero = () => {
         </div>
 
         <div className="w-full md:w-[670px] md:h-[480px]">
-          <img src="/images/foto1.jpeg" className=" object-fill rounded-md" />
+          <Image
+            src="/images/foto1.jpeg"
+            className=" object-fill rounded-md"
+            alt="Hero dua"
+          />
         </div>
       </div>
     </div>

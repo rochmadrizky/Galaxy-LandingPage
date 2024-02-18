@@ -8,6 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Image from "next/image";
 
 export function Slidebar() {
   // Define array of image sources
@@ -34,7 +35,7 @@ export function Slidebar() {
               <Card>
                 <CardContent className="flex aspect-square items-center justify-center p-6">
                   <div className="flex items-center justify-center">
-                    <img
+                    <Image
                       src={src}
                       alt={`partner-${index}`}
                       className="w-auto h-auto max-w-full max-h-full"
