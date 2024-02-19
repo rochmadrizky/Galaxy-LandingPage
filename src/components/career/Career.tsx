@@ -81,9 +81,9 @@ const IsiContent = () => {
               indeksSaatIni === 0
                 ? "pointer-events-none"
                 : "pointer-events-auto"
-            } bg-black rounded-full p-3`}
+            } `}
           >
-            <IconPlayerTrackPrev className="text-white" />
+            <IconPlayerTrackPrev />
           </button>
 
           <div className="w-[280px] h-[280px] rounded-3xl overflow-hidden relative">
@@ -101,9 +101,9 @@ const IsiContent = () => {
               indeksSaatIni === konten.length - 1
                 ? "pointer-events-none"
                 : "pointer-events-auto"
-            } bg-black rounded-full p-3`}
+            } `}
           >
-            <IconPlayerTrackNext className="text-white" />
+            <IconPlayerTrackNext />
           </button>
         </div>
 
