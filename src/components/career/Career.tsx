@@ -2,6 +2,7 @@
 
 import { IconPlayerTrackNext, IconPlayerTrackPrev } from "@tabler/icons-react";
 import { useState, useRef } from "react";
+import Image from "next/image";
 
 const IsiContent = () => {
   const konten = [
@@ -14,14 +15,12 @@ const IsiContent = () => {
     {
       gambar: "/career/03.jpeg",
     },
-
     {
       gambar: "/career/04.jpeg",
     },
   ];
 
   const [indeksSaatIni, mengaturIndeksSaatIni] = useState(0);
-  const [seretDariX, mengaturSeretDariX] = useState(0);
   const [titikAktif, mengaturTitikAktif] = useState(0);
   const penggeser = useRef<HTMLDivElement>(null);
 
@@ -37,29 +36,6 @@ const IsiContent = () => {
       indeksSaatIni === konten.length - 1 ? 0 : indeksSaatIni + 1;
     mengaturIndeksSaatIni(pengechekan);
     mengaturTitikAktif(pengechekan);
-  };
-
-  const tekanMouse = (klik: React.MouseEvent<HTMLDivElement>) => {
-    mengaturSeretDariX(klik.pageX);
-  };
-
-  const pergerakanMouse = (geser: React.MouseEvent<HTMLDivElement>) => {
-    if (seretDariX === 0 || !penggeser.current) return;
-
-    const posisiX = geser.pageX;
-    const perbedaan = posisiX - seretDariX;
-
-    if (perbedaan > 50 && indeksSaatIni !== konten.length - 1) {
-      selanjutnya();
-      mengaturSeretDariX(0);
-    } else if (perbedaan < -50 && indeksSaatIni !== 0) {
-      sebelumnya();
-      mengaturSeretDariX(0);
-    }
-  };
-
-  const lepasKlikMouse = () => {
-    mengaturSeretDariX(0);
   };
 
   const titik = konten.map((_, urutan) => (
@@ -78,7 +54,7 @@ const IsiContent = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4">
+    <div className="max-w-7xl mx-auto px-6">
       <div className="flex flex-col items-center justify-center">
         <h1 className="pt-28 text-5xl font-bold text-center">
           Cerita sukses GALAXIANS
@@ -97,11 +73,8 @@ const IsiContent = () => {
       <div
         className="w-full m-auto px-4 flex flex-col items-center justify-center"
         ref={penggeser}
-        onMouseDown={tekanMouse}
-        onMouseMove={pergerakanMouse}
-        onMouseUp={lepasKlikMouse}
       >
-        <div className="flex items-center justify-center gap-2 py-5">
+        <div className="flex items-center justify-center gap-2 py-5 px-4">
           <button
             onClick={sebelumnya}
             className={`${
@@ -113,10 +86,14 @@ const IsiContent = () => {
             <IconPlayerTrackPrev className="text-white" />
           </button>
 
-          <div
-            className="w-[280px] h-[280px] rounded-3xl overflow-hidden bg-center bg-cover duration-500"
-            style={{ backgroundImage: `url(${konten[indeksSaatIni].gambar})` }}
-          ></div>
+          <div className="w-[280px] h-[280px] rounded-3xl overflow-hidden relative">
+            <Image
+              src={konten[indeksSaatIni].gambar}
+              layout="fill"
+              objectFit="cover"
+              alt={"career"}
+            />
+          </div>
 
           <button
             onClick={selanjutnya}
