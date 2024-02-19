@@ -1,6 +1,5 @@
 import React from "react";
 import { Button } from "../ui/button";
-import Image from "next/image";
 
 const Hero = () => {
   const gambar = [
@@ -47,7 +46,7 @@ const Hero = () => {
                     className={`border-[3px] border-[#972421] rounded-full overflow-hidden bg-gray-200`}
                     style={{ position: "relative", ...orang.gaya }}
                   >
-                    <Image
+                    <img
                       src={orang.foto}
                       className="w-10 h-10 object-scale-down"
                       alt="Hero"
@@ -68,7 +67,7 @@ const Hero = () => {
         </div>
 
         <div className="w-full md:w-[670px] md:h-[480px]">
-          <Image
+          <img
             src="/images/foto1.jpeg"
             className=" object-fill rounded-md"
             alt="Hero dua"

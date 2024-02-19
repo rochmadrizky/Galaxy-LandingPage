@@ -1,6 +1,5 @@
 import React from "react";
 import { Button } from "../ui/button";
-import Image from "next/image";
 
 const Promo = () => {
   return (
@@ -26,7 +25,7 @@ const Promo = () => {
         </div>
 
         <div className="w-full md:w-[577px] h-[772px] mb-9">
-          <Image
+          <img
             src="/promo/promo.jpeg"
             className="object-cover rounded-3xl"
             alt="Promo"

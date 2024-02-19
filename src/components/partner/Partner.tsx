@@ -1,6 +1,5 @@
 import React from "react";
 import { IconDots, IconOvalVerticalFilled } from "@tabler/icons-react";
-import Image from "next/image";
 
 const Partner = () => {
   const partner = [
@@ -31,7 +30,7 @@ const Partner = () => {
             <div className="grid grid-cols-3 md:grid-cols-6 items-center justify-center gap-6">
               {partner.map((gambar, urutan) => (
                 <div key={urutan} className="flex items-center justify-center">
-                  <Image
+                  <img
                     src={gambar}
                     alt={`Partner ${urutan + 1}`}
                     className="partner-image"
@@ -55,7 +54,7 @@ const Partner = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-4 items-center justify-center mt-12">
             <div className="flex items-center justify-center">
-              <Image
+              <img
                 src="/partner/bca.png"
                 className="w-[151px] h-[108px]"
                 alt="Partner 1"
@@ -63,7 +62,7 @@ const Partner = () => {
             </div>
 
             <div className="flex items-center justify-center">
-              <Image
+              <img
                 src="/partner/bca.png"
                 className="w-[151px] h-[108px]"
                 alt="Partner 2"
@@ -71,7 +70,7 @@ const Partner = () => {
             </div>
 
             <div className="flex items-center justify-center">
-              <Image
+              <img
                 src="/partner/bca.png"
                 className="w-[151px] h-[108px]"
                 alt="Partner 3"
@@ -79,7 +78,7 @@ const Partner = () => {
             </div>
 
             <div className="flex items-center justify-center">
-              <Image
+              <img
                 src="/partner/bca.png"
                 className="w-[151px] h-[108px]"
                 alt="Partner 4"
