@@ -4,25 +4,19 @@ import { IconPlayerTrackNext, IconPlayerTrackPrev } from "@tabler/icons-react";
 import { useState, useRef } from "react";
 import Image from "next/image";
 
-const Partner = () => {
+const Bank = () => {
   const konten = [
     {
-      gambar: "/partner/partner1.png",
+      gambar: "/bank/bca.png",
     },
     {
-      gambar: "/partner/partner2.png",
+      gambar: "/bank/btn.png",
     },
     {
-      gambar: "/partner/partner3.png",
+      gambar: "/bank/bri.png",
     },
     {
-      gambar: "/partner/partner4.jpeg",
-    },
-    {
-      gambar: "/partner/partner5.png",
-    },
-    {
-      gambar: "/partner/partner6.png",
+      gambar: "/bank/mega.png",
     },
   ];
 
@@ -62,23 +56,17 @@ const Partner = () => {
   return (
     <div className="max-w-7xl mx-auto px-4">
       <div className="flex flex-col items-center justify-center">
-        <div className="p-4">
-          <h1 className="text-center text-3xl font-bold">
-            Lebih dari
-            <span className="text-[#972421] px-1">10.000++</span>Properti dari
-            Berbagai Developer,
-          </h1>
-          <h1 className="text-center text-3xl font-bold">
-            Siap untuk Kamu Jual!
-          </h1>
-        </div>
+        <h1 className="text-4xl font-bold text-center">
+          Dukungan Perbankan <span className="text-[#972421]">GALAXY </span>{" "}
+          Mempermudah Klien dalam Urusan KPR
+        </h1>
       </div>
 
       <div
         className="w-full m-auto px-4 flex flex-col items-center justify-center"
         ref={penggeser}
       >
-        <div className="flex items-center justify-center gap-2">
+        <div className="flex items-center justify-center gap-2 py-5">
           <button
             onClick={sebelumnya}
             className={`${
@@ -93,10 +81,10 @@ const Partner = () => {
           <div className="w-[280px] h-[280px] rounded-3xl overflow-hidden relative flex items-center justify-center">
             <Image
               src={konten[indeksSaatIni].gambar}
-              width={102}
-              height={102}
+              width={100}
+              height={100}
               className="object-cover"
-              alt={"partner"}
+              alt={"bank"}
             />
           </div>
 
@@ -118,4 +106,4 @@ const Partner = () => {
   );
 };
 
-export default Partner;
+export default Bank;

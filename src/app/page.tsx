@@ -1,4 +1,5 @@
 import About from "@/components/about/About";
+import Bank from "@/components/bank/Bank";
 import Career from "@/components/career/Career";
 import Consultan from "@/components/consultan/Consultan";
 import Contact from "@/components/contact/Contact";
@@ -22,8 +23,12 @@ export default function Home() {
         <About />
       </div>
 
-      <div className="mb-28 md:my-10">
+      <div className="mb-28 md:mt-10 md:mb-5">
         <Partner />
+      </div>
+
+      <div className="mb-28 md:mb-10">
+        <Bank />
       </div>
 
       <div className="mb-28 md:my-10 bg-[#EFEEEE]">

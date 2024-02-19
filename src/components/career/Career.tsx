@@ -4,7 +4,7 @@ import { IconPlayerTrackNext, IconPlayerTrackPrev } from "@tabler/icons-react";
 import { useState, useRef } from "react";
 import Image from "next/image";
 
-const IsiContent = () => {
+const Career = () => {
   const konten = [
     {
       gambar: "/career/01.jpeg",
@@ -41,8 +41,8 @@ const IsiContent = () => {
   const titik = konten.map((_, urutan) => (
     <span
       key={urutan}
-      className={`h-3 w-3 bg-black ring-white ring-1 rounded-full mx-1 cursor-pointer ${
-        urutan === titikAktif && "bg-white"
+      className={`h-3 w-3 bg-[#980000] rounded-full mx-1 cursor-pointer ${
+        urutan === titikAktif && "bg-[#C4C4C4]"
       }`}
       onClick={() => ubahKontenDenganTitik(urutan)}
     />
@@ -90,7 +90,7 @@ const IsiContent = () => {
             <Image
               src={konten[indeksSaatIni].gambar}
               layout="fill"
-              objectFit="cover"
+              className="object-cover"
               alt={"career"}
             />
           </div>
@@ -113,4 +113,4 @@ const IsiContent = () => {
   );
 };
 
-export default IsiContent;
+export default Career;

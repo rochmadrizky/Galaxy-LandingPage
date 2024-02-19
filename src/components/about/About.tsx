@@ -55,7 +55,7 @@ const About = () => {
               <div key={urutan} className="max-w-xs mb-6">
                 <img
                   src={penjelasan.icon}
-                  className="w-[102px] h-20"
+                  className="w-[102px] h-[102px]"
                   alt="penjelasan"
                 />
                 <div className="mt-6 mb-4">
