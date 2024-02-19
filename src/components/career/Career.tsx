@@ -54,7 +54,7 @@ const IsiContent = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-6">
+    <div className="max-w-7xl mx-auto px-4">
       <div className="flex flex-col items-center justify-center">
         <h1 className="pt-28 text-5xl font-bold text-center">
           Cerita sukses GALAXIANS
@@ -74,7 +74,7 @@ const IsiContent = () => {
         className="w-full m-auto px-4 flex flex-col items-center justify-center"
         ref={penggeser}
       >
-        <div className="flex items-center justify-center gap-2 py-5 px-4">
+        <div className="flex items-center justify-center gap-2 py-5">
           <button
             onClick={sebelumnya}
             className={`${
